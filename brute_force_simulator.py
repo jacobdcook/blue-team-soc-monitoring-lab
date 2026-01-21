@@ -18,7 +18,7 @@ from datetime import datetime
 LOG_FILE = "attack_log.txt"
 
 def log_attempt(username, timestamp, success=False):
-    """Log each authentication attempt to a file"""
+    """Log each authentication attempt to a file for documentation."""
     status = "SUCCESS" if success else "FAILED"
     with open(LOG_FILE, "a") as f:
         f.write(f"{timestamp} - Username: {username}, Status: {status}\n")
@@ -27,6 +27,7 @@ def simulate_failed_login(username="nonexistentuser", password="wrongpass123"):
     """
     Simulate a failed login attempt using su command.
     This will generate entries in /var/log/auth.log that Wazuh monitors.
+    The command always fails with wrong credentials, creating realistic log entries.
     """
     try:
         # Try to login with wrong credentials - this creates auth.log entries
@@ -108,7 +109,7 @@ def simulate_brute_force(num_attempts=20, delay_range=(1, 2)):
     print(f"{'='*60}\n")
 
 def main():
-    """Main function"""
+    """Main function to run the brute force simulation."""
     print("\n" + "="*60)
     print("Wazuh SOC Lab - Brute Force Attack Simulator")
     print("="*60)

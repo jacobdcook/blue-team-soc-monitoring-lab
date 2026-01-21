@@ -1,0 +1,31 @@
+# Sensitive files
+attack_log.txt
+wazuh-install-files.tar
+
+# Certificate files
+*.pem
+*.key
+*.csr
+*.srl
+
+# Log files
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Docker volumes and configs (if using Docker)
+docker-compose-simple.yml
+wazuh-certificates/
+config/
+
+# Environment files
+.env
+*.env
